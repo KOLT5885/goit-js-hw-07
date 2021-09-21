@@ -11,13 +11,11 @@ const validationInputRef = document.getElementById('validation-input')
 function takeClassByLength() {
   const curentTarget = event.currentTarget
   const dataLengthAttribut = Number(curentTarget.getAttribute('data-length'))
-  if (curentTarget.value.length === dataLengthAttribut) {
-    curentTarget.classList.remove('invalid')
-    curentTarget.classList.add('valid')
-  } else {
-    curentTarget.classList.add('invalid')
-    curentTarget.classList.remove('valid')
-  }
+  curentTarget.classList.remove('invalid')
+  curentTarget.classList.remove('valid')
+  curentTarget.value.length === dataLengthAttribut
+    ? curentTarget.classList.add('valid')
+    : curentTarget.classList.add('invalid')
 }
 
 validationInputRef.addEventListener('blur', takeClassByLength)

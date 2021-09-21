@@ -8,15 +8,26 @@
 // Категория: Животные
 // Количество элементов: 4
 
-const itemUlCategories = window.document.querySelectorAll('#categories>.item')
-console.log('В списке', itemUlCategories.length, 'категории.')
+// const itemUlCategories = window.document.querySelectorAll('#categories>.item')
+// console.log('В списке', itemUlCategories.length, 'категории.')
 
-itemUlCategories.forEach(takeDetalsOfCategory)
+// itemUlCategories.forEach(takeDetalsOfCategory)
 
-function takeDetalsOfCategory(itemCategory) {
-  console.log('Категория:', itemCategory.querySelector('h2').textContent)
+// function takeDetalsOfCategory(itemCategory) {
+//   console.log('Категория:', itemCategory.querySelector('h2').textContent)
+//   console.log(
+//     'Количество элементов:',
+//     itemCategory.querySelectorAll('ul>li').length,
+//   )
+// }
+
+const list = document.querySelector('#categories')
+const items = list.querySelectorAll('.item')
+console.log(`В списке ${items.length} категории:`)
+items.forEach((node) => {
+  const h2 = node.querySelector('h2')
+  const nodeItems = node.querySelectorAll('li')
   console.log(
-    'Количество элементов:',
-    itemCategory.querySelectorAll('ul>li').length,
+    ` - категория: ${h2.textContent} (количество элементов: ${nodeItems.length})`,
   )
-}
+})

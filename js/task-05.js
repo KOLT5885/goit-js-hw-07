@@ -8,11 +8,9 @@ const nameOutput = document.getElementById('name-output')
 
 function setNameOutput() {
   const curentTargetValue = event.currentTarget.value
-  if (curentTargetValue === '') {
-    nameOutput.textContent = 'незнакомец'
-  } else {
-    nameOutput.textContent = curentTargetValue
-  }
+  curentTargetValue === ''
+    ? (nameOutput.textContent = 'незнакомец')
+    : (nameOutput.textContent = curentTargetValue)
 }
 
 nameInputref.addEventListener('blur', setNameOutput)
